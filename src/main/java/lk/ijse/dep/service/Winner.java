@@ -8,14 +8,15 @@ public class Winner  {
     private int row2;
 
     public Winner(Piece winningPiece) {
+
         this.winningPiece = winningPiece;
+        this.col1 = -1;
+        this.row1 = -1;
+        this.col2 = -1;
+        this.row2 = -1;
     }
 
     public Winner(Piece winningPiece, int col1, int row1, int col2, int row2) {
-        col1= -1;
-        col2 =-1;
-        row1 = -1;
-        row2 = -1;
 
         this.winningPiece = winningPiece;
         this.col1 = col1;
