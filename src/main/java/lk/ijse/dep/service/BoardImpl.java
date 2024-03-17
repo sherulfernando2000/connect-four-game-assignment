@@ -16,6 +16,9 @@ public class BoardImpl implements Board {
         this.pieces = new Piece[NUM_OF_COLS][NUM_OF_ROWS];
         this.boardUI = boardUI;
 
+
+
+
         for (int col = 0; col < NUM_OF_COLS; col++) {
             for (int row = 0; row <NUM_OF_ROWS ; row++) {
                 pieces[col][row] = Piece.EMPTY;
@@ -44,7 +47,7 @@ public class BoardImpl implements Board {
     @Override
     public int findNextAvailableSpot(int col) {
         for (int row = 0 ; row < NUM_OF_ROWS ; row++) {
-            if (pieces[col][row] ==Piece.EMPTY) {
+            if (pieces[col][row].equals(Piece.EMPTY)) {
                 return row;
             }
         }
@@ -78,6 +81,7 @@ public class BoardImpl implements Board {
 
     @Override
     public void updateMove(int col, Piece move) {
+
         for(int i=0;i<pieces[col].length;i++){
             if(pieces[col][i].equals(Piece.EMPTY)){
                 pieces[col][i]=move;
@@ -95,13 +99,14 @@ public class BoardImpl implements Board {
     }
 
     @Override
-    public void updatMove(int col, int row, Piece move) {
+    public void updateMove(int col, int row, Piece move) {
         pieces[col][row] = move;
     }
 
 
     @Override
     public Winner findWinner() {
+
         for (int col = 0; col < NUM_OF_COLS; col++) {
             for (int row = 0; row < NUM_OF_ROWS; row++) {
                 Piece currentPiece = pieces[col][row];

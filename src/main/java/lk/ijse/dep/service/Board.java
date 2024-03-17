@@ -11,7 +11,7 @@ public interface Board  {
     public boolean existLeagalMoves();
     public void updateMove(int col, Piece move);
 
-    public void updatMove(int col, int row, Piece move);
+    public void updateMove(int col, int row, Piece move);
 
     public Winner findWinner();
 

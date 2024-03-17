@@ -36,15 +36,16 @@ public class HumanPlayer extends Player {
 
             board.updateMove(col, Piece.BLUE);
             board.getBoardUi().update(col, true);
+                  Winner winner = board.findWinner();
 
-             if ((board.findWinner().getWinningPiece()).equals(Piece.EMPTY)) {
+             if ((winner.getWinningPiece()).equals(Piece.EMPTY)) {
 
                 if (!board.existLeagalMoves()) {
-                    board.getBoardUi().notifyWinner(new Winner(Piece.EMPTY));
+                    board.getBoardUi().notifyWinner(winner);
                 }
 
             } else {
-                board.getBoardUi().notifyWinner(board.findWinner());
+                board.getBoardUi().notifyWinner(winner);
             }
 
         }
